@@ -9,6 +9,7 @@ function App() {
     <HashRouter>
 
       <div className="App">
+        <h1>Header</h1>
         {routes}
         <Header/>
       </div>
