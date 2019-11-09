@@ -7,18 +7,18 @@ class Dashboard extends Component{
     constructor(){
         super()
         this.state = {
-            houses: []
+            houses: ['house1','house2', 'house3']
         }
 
     }
-    componentDidMount(){
-        axios.get('/api/dashboard')
-        .then(res => {
-            this.setState({
-                houses: res.data
-            })
-        })
-    }
+    // componentDidMount(){
+    //     axios.get('/api/dashboard')
+    //     .then(res => {
+    //         this.setState({
+    //             houses: res.data
+    //         })
+    //     })
+    // }
     redirectToTarget = () => {
         this.props.history.push(`/wizard`)
     }
@@ -26,16 +26,18 @@ class Dashboard extends Component{
         
         return(
             <div>
-                {/* {this.state.houses.map((house, key) =>)} */}
+                <button color="primary"
+                        className="addProp"
+                        onClick={this.redirectToTarget}>Add New Property</button>
                 
+                {this.state.houses.map(el => (<House housesObj = {el} key={el.id}/>))}
+
+
                 <House path='/House'/> 
                 
 
 
 
-                <button color="primary"
-                        className="addProp"
-                        onClick={this.redirectToTarget}>Add New Property</button>
             </div>
         )
     }
