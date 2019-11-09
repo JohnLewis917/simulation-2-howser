@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import axios from 'axios'
 
 
 class Wizard extends Component{
@@ -35,6 +36,14 @@ class Wizard extends Component{
     redirectToTarget = () => {
         this.props.history.push(`/`)
     }
+    addHouse(){
+        axios.post('/api/Dashboard', this.state)
+        .then(res => {
+            this.props.history.push('/')
+        })
+    }
+
+    
     render(){
         return(
             <div>
@@ -58,6 +67,7 @@ class Wizard extends Component{
                     <h5>Zip Code</h5>
                     <input className="input-5" type="number" size="10" onChange={this.handleZip}></input>
                 </form>
+                <button color="primary" className="submitHouse" onClick={() => this.addHouse()}>Complete</button>
             
                 
             </div>
