@@ -9,13 +9,12 @@ class House extends Component{
     render(){
         return(
             <div>
-                <box className="box-1">
+                <div className="box-1">
                     <h4>{this.props.housesObj}</h4>
-                    <div>
-                    <button className="house-delete" type="delete">Delete</button>
-                    </div>
-
-                </box>
+                    
+                </div>
+                <button className="delete" onClick={() => this.deleteAHouse()}>Delete</button> 
+            
                 
                  
             </div>
