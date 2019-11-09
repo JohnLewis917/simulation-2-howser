@@ -9,8 +9,14 @@ class House extends Component{
     render(){
         return(
             <div>
+                <box className="box-1">
+                    <h4>{this.props.housesObj}</h4>
+                    <div>
+                    <button className="house-delete" type="delete">Delete</button>
+                    </div>
+
+                </box>
                 
-                 <button className="house-delete" type="delete">Delete</button>
                  
             </div>
         )
