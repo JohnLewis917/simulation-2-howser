@@ -7,7 +7,7 @@ const massive = require('massive')
 const app = express()
 app.use(express.json())
 
-app.get('/api/Dashboard', ctrl.getHouses)
+// app.get('/api/Dashboard', ctrl.getHouses)
 
 massive(CONNECTION_STRING).then(databaseConnection => {
     app.set('db', databaseConnection)
