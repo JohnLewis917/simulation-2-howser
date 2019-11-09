@@ -7,18 +7,27 @@ class Dashboard extends Component{
     constructor(){
         super()
         this.state = {
-            houses: ['house1','house2', 'house3']
+            houses: []
         }
 
     }
-    // componentDidMount(){
-    //     axios.get('/api/dashboard')
-    //     .then(res => {
-    //         this.setState({
-    //             houses: res.data
-    //         })
-    //     })
-    // }
+    componentDidMount(){
+        axios.get('/api/dashboard')
+        .then(res => {
+            this.setState({
+                houses: res.data
+            })
+        })
+    }
+    deleteAHouse(){
+        axios.delete('/api/Dashboard/:id')
+        .then(res => {
+            this.setState({
+                houses: res.data 
+            })
+        })
+        
+    }
     redirectToTarget = () => {
         this.props.history.push(`/wizard`)
     }
