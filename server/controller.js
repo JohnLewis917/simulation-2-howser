@@ -1,12 +1,36 @@
-// module.exports = {
-//     getHouses(req, res) {
-//         const db = req.app.get('db')
-//         db.get_houses()
-//         .then(result => {
-//             res.satus(200).send(result)
-//         })
-//         .catch(err => {
-//             console.log(err)
-//         })
-//     }
-// }
+module.exports = {
+    getHouses(req, res) {
+        const db = req.app.get('db')
+        db.get_houses()
+        .then(result => {
+            res.status(200).send(result)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    },
+    addHouse(req, res) {
+        const db = req.app.post('db')
+        const {name, address, city, state, zip_code} = req.body
+        db.add_house({
+            name: name,
+            address: address,
+            city: city,
+            state: state,
+            zip_code: zip_code
+        })
+        .then(result => {
+            res.status(200).send(result)
+        })
+        .catch(err => {
+            console.log(err)
+        }) 
+    },
+    deleteAHouse(req, res){
+        const db = req.app.delete('db')
+        db.delete_house()
+        .then(result => {
+            res.status(200).send(result)
+        })
+    }
+}
