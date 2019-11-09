@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import House from '../House/House'
-import Axios from 'axios'
+import axios from 'axios'
 
 class Dashboard extends Component{
 
@@ -11,14 +11,14 @@ class Dashboard extends Component{
         }
 
     }
-    // componentDidMount(){
-    //     axios.get('/api/dashboard')
-    //     .then(res => {
-    //         this.setState({
-    //             houses: res.data
-    //         })
-    //     })
-    // }
+    componentDidMount(){
+        axios.get('/api/dashboard')
+        .then(res => {
+            this.setState({
+                houses: res.data
+            })
+        })
+    }
     redirectToTarget = () => {
         this.props.history.push(`/wizard`)
     }
@@ -26,8 +26,9 @@ class Dashboard extends Component{
         
         return(
             <div>
-                {this.state.houses.map((house, key) =>
-                <House house={house} key={house.id}/> )}
+                {/* {this.state.houses.map((house, key) =>)} */}
+                
+                <House path='/House'/> 
                 
 
 
