@@ -10,7 +10,7 @@ module.exports = {
         })
     },
     addHouse(req, res) {
-        const db = req.app.post('db')
+        const db = req.app.get('db')
         const {name, address, city, state, zip_code} = req.body
         db.add_house({
             name: name,
@@ -27,8 +27,8 @@ module.exports = {
         }) 
     },
     deleteAHouse(req, res){
-        const db = req.app.delete('db')
-        db.delete_house()
+        const db = req.app.get('db')
+        db.delete_house(req.params.id)
         .then(result => {
             res.status(200).send(result)
         })
