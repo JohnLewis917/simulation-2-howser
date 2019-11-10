@@ -37,7 +37,7 @@ class Wizard extends Component{
         this.props.history.push(`/`)
     }
     addHouse(){
-        axios.post('/api/Dashboard', this.state)
+        axios.post('/api/Wizard', this.state)
         .then(res => {
             this.props.history.push('/')
         })
