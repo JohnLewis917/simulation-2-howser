@@ -10,18 +10,22 @@ class Dashboard extends Component{
             houses: []
         }
 
+
     }
-    componentDidMount(){
-        axios.get('/api/dashboard')
+    
+    getHouses(){
+        axios.get('/api/Dashboard')
         .then(res => {
             this.setState({
                 houses: res.data
             })
+            
         })
     }
     deleteAHouse(){
         axios.delete('/api/Dashboard/:id')
         .then(res => {
+            console.log(res)
             this.setState({
                 houses: res.data 
             })
@@ -32,21 +36,19 @@ class Dashboard extends Component{
         this.props.history.push(`/wizard`)
     }
     render(){
-        
         return(
             <div>
                 <button color="primary"
                         className="addProp"
                         onClick={this.redirectToTarget}>Add New Property</button>
                 
-                {this.state.houses.map(el => (<House housesObj = {el} key={el.id}/>))}
+            
 
+                {this.state.houses.map(el => 
+                (<House key={el.id} housesObj={el} />))}
 
-                <House path='/House'/> 
-                
-
-
-
+                <House path='/House'/>
+            
             </div>
         )
     }
