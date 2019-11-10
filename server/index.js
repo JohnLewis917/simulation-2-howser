@@ -7,9 +7,9 @@ const massive = require('massive')
 const app = express()
 app.use(express.json())
 
-app.get('/api/dashboard', ctrl.getHouses)
-app.post('/api/dashboard', ctrl.addHouse)
-app.delete('/api/dashboard/:id', ctrl.deleteAHouse)
+app.get('/api/Dashboard', ctrl.getHouses)
+app.post('/api/Wizard', ctrl.addHouse)
+app.delete('/api/Dashboard/:id', ctrl.deleteAHouse)
 
 massive(CONNECTION_STRING).then(databaseConnection => {
     app.set('db', databaseConnection)
