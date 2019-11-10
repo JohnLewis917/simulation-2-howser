@@ -7,10 +7,15 @@ class House extends Component{
         super()
     }
     render(){
+        
         return(
             <div>
                 <div className="box-1">
-                    <h4>{this.props.housesObj}</h4>
+                    <div>
+                        <h4>
+                            {this.props.housesObj}
+                         </h4>
+                    </div>
                     
                 </div>
                 <button className="delete" onClick={() => this.deleteAHouse()}>Delete</button> 
