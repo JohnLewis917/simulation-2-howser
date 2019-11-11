@@ -5,6 +5,7 @@ import axios from 'axios'
 class Dashboard extends Component{
 
     constructor(){
+        
         super()
         this.state = {
             houses: []
@@ -19,6 +20,7 @@ class Dashboard extends Component{
             this.setState({
                 houses: res.data
             })
+            console.log(res.data)
             
         })
     }
