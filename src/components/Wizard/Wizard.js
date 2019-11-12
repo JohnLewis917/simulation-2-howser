@@ -19,31 +19,32 @@ class Wizard extends Component{
         this.handleZip = this.handleZip.bind(this)
     }
     handleName(event){
-        this.setState({name: event.target.name})
+        
+        this.setState({name: event.target.value})
     }
     handleAddress(event){
-        this.setState({address: event.target.address})
+        this.setState({address: event.target.value})
     }
     handleCity(event){
-        this.setState({city: event.target.city})
+        
+        this.setState({city: event.target.value})
     }
     handleState(event){
-        this.setState({state: event.target.state})
+        this.setState({state: event.target.value})
     }
     handleZip(event){
-        this.setState({zip: event.target.zip})
+        this.setState({zip: event.target.value})
+    
     }
     redirectToTarget = () => {
         this.props.history.push(`/`)
     }
-    handleSubmit = event => {
-        event.preventDefault()
-        addHouse(){
-            axios.post('/api/Dashboard', this.state)
-            .then(res => {
-                this.props.history.push('/')
-            })
-        }
+    
+    addHouse(){
+        axios.post('/api/Dashboard', this.state)
+        .then(res => {
+        this.props.history.push('/')
+        })
     }
     
     
@@ -51,6 +52,7 @@ class Wizard extends Component{
 
     
     render(){
+        
         return(
             <div>
                 <h1>Add New Listing</h1>
@@ -59,20 +61,22 @@ class Wizard extends Component{
                         onClick={this.redirectToTarget}>Cancel</button>
                 <form>
                     <h5>Property Name</h5>
-                    <input className="input-1" type="text" size="35"  onChange={this.handleName}></input>
+                    <input className="input-1" type="text" size="35"  onChange={(e) => this.handleName(e)}></input>
                     <br></br>
                     <h5>Address</h5>
-                    <input className="input-2" type="text" size="35" onChange={this.handleAddress}></input>
+                    <input className="input-2" type="text" size="35" onChange={(e) => this.handleAddress(e)}></input>
                     <br></br>
                     <h5>City</h5>
-                    <input className="input-3" type="text" size="30"  onChange={this.handleCity}></input>
+                    <input className="input-3" type="text" size="30"  onChange={(e) => this.handleCity(e)}></input>
                     <br></br>
                     <h5>State</h5>
-                    <input className="input-4" type="text" size="5"  onChange={this.handleState}></input>
+                    <input className="input-4" type="text" size="5"  onChange={(e) => this.handleState(e)}></input>
                     <br></br>
                     <h5>Zip Code</h5>
-                    <input className="input-5" type="number" size="10" onChange={this.handleZip}></input>
-                    <button color="primary" className="submitHouse" type="submit">Complete</button>
+                    <input className="input-5" type="number" size="10" onChange={(e) => this.handleZip(e)}></input>
+                    <br></br>
+                    <br></br>
+                    <button color="primary" className="submitHouse" type="submit" onClick={() => this.addHouse()}>Complete</button>
                 </form>
             
                 
