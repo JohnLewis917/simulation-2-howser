@@ -6,19 +6,33 @@ class House extends Component{
     constructor(){
         super()
     }
+    
+
     render(){
         
         return(
             <div>
                 <div className="box-1">
                     <div>
-                        <h4>
-                            {this.props.housesObj}
-                         </h4>
+                        <h6>
+                            {this.props.housesObj.name}
+                         </h6>
+                         <h6>
+                             {this.props.housesObj.address}
+                         </h6>
+                         <h6>
+                             {this.props.housesObj.city}
+                         </h6>
+                         <h6>
+                             {this.props.housesObj.state}
+                         </h6>
+                         <h6>
+                             {this.props.housesObj.zip_code}
+                         </h6>
                     </div>
                     
                 </div>
-                <button className="delete" onClick={() => this.deleteAHouse()}>Delete</button> 
+                <button className="delete" type="submit" onClick={() => this.props.deleteAHouse(this.props.id)}>Delete</button> 
             
                 
                  
