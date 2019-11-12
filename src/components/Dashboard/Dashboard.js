@@ -13,7 +13,9 @@ class Dashboard extends Component{
 
 
     }
-    
+    componentDidMount(){
+        this.getHouses()
+    }
     getHouses(){
         axios.get('/api/Dashboard')
         .then(res => {
@@ -24,16 +26,14 @@ class Dashboard extends Component{
             
         })
     }
-    deleteAHouse(){
-        axios.delete('/api/Dashboard/:id')
-        .then(res => {
-            console.log(res)
-            this.setState({
-                houses: res.data 
-            })
+    deleteAHouse=(id) => {
+        axios.delete(`/api/Dashboard/${id}`)
+        .then(() => {
+            this.getHouses()
         })
+        }
         
-    }
+    
     redirectToTarget = () => {
         this.props.history.push(`/wizard`)
     }
@@ -47,9 +47,9 @@ class Dashboard extends Component{
             
 
                 {this.state.houses.map(el => 
-                (<House key={el.id} housesObj={el} />))}
+                (<House id={el.id} housesObj={el} deleteAHouse={this.deleteAHouse} />))}
 
-                <House path='/House'/>
+                
             
             </div>
         )

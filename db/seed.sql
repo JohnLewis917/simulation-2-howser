@@ -14,3 +14,8 @@ values (
 ('Isoetes','1 Birchwood Pl.','Dayton','OH','45414'),
 ('Galium', '9 Duke Center','Boulder','CO','80328'),
 ('Abutilon','17 Norway Maple Ct','Charlotte','NC','28230')
+
+alter table houses
+add column image text,
+add column mortgage integer,
+add column rent integer

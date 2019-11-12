@@ -14,7 +14,6 @@ app.delete('/api/Dashboard/:id', ctrl.deleteAHouse)
 massive(CONNECTION_STRING).then(databaseConnection => {
     app.set('db', databaseConnection)
     console.log('database connected')
+    app.listen(SERVER_PORT, () => console.log(`${SERVER_PORT} dollars in ma pocket`))
 })
 
-
-app.listen(SERVER_PORT, () => console.log(`${SERVER_PORT} dollars in ma pocket`))

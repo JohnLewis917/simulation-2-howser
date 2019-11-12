@@ -1,4 +1,4 @@
 delete from houses
-where id = $1
+where id = $1;
 
-returning *;
+select * from houses;
