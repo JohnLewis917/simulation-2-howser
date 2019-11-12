@@ -36,12 +36,18 @@ class Wizard extends Component{
     redirectToTarget = () => {
         this.props.history.push(`/`)
     }
-    addHouse(){
-        axios.post('/api/Wizard', this.state)
-        .then(res => {
-            this.props.history.push('/')
-        })
+    handleSubmit = event => {
+        event.preventDefault()
+        addHouse(){
+            axios.post('/api/Dashboard', this.state)
+            .then(res => {
+                this.props.history.push('/')
+            })
+        }
     }
+    
+    
+    
 
     
     render(){
@@ -53,21 +59,21 @@ class Wizard extends Component{
                         onClick={this.redirectToTarget}>Cancel</button>
                 <form>
                     <h5>Property Name</h5>
-                    <input className="input-1" type="text" size="35" onChange={this.handleName}></input>
+                    <input className="input-1" type="text" size="35"  onChange={this.handleName}></input>
                     <br></br>
                     <h5>Address</h5>
                     <input className="input-2" type="text" size="35" onChange={this.handleAddress}></input>
                     <br></br>
                     <h5>City</h5>
-                    <input className="input-3" type="text" size="30" onChange={this.handleCity}></input>
+                    <input className="input-3" type="text" size="30"  onChange={this.handleCity}></input>
                     <br></br>
                     <h5>State</h5>
-                    <input className="input-4" type="text" size="5" onChange={this.handleState}></input>
+                    <input className="input-4" type="text" size="5"  onChange={this.handleState}></input>
                     <br></br>
                     <h5>Zip Code</h5>
                     <input className="input-5" type="number" size="10" onChange={this.handleZip}></input>
+                    <button color="primary" className="submitHouse" type="submit">Complete</button>
                 </form>
-                <button color="primary" className="submitHouse" onClick={() => this.addHouse()}>Complete</button>
             
                 
             </div>
