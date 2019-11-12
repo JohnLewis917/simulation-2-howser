@@ -8,7 +8,7 @@ const app = express()
 app.use(express.json())
 
 app.get('/api/Dashboard', ctrl.getHouses)
-app.post('/api/Wizard', ctrl.addHouse)
+app.post('/api/Dashboard', ctrl.addHouse)
 app.delete('/api/Dashboard/:id', ctrl.deleteAHouse)
 
 massive(CONNECTION_STRING).then(databaseConnection => {
