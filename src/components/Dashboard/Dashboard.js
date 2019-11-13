@@ -35,7 +35,7 @@ class Dashboard extends Component{
         
     
     redirectToTarget = () => {
-        this.props.history.push(`/wizard`)
+        this.props.history.push(`/wizard/stepOne`)
     }
     render(){
         return(
