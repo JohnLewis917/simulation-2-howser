@@ -5,6 +5,9 @@ const initialState = {
   state: "",
   zip: 0,
   image: "",
+  mortgage: 0,
+  rent: 0
+
   
 }
 
