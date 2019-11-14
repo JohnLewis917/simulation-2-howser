@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 
 
-class Wizard extends Component{
+class StepTwo extends Component{
     constructor(){
         super()
         this.state = {
@@ -30,15 +30,17 @@ class Wizard extends Component{
             <div>
                 
                 <form>
-                    <img>image URL</img>
+                    {/* <img src="" alt="" type="image"/> */}
                     <input className="input-1" type="text" size="35"  onChange={(e) => this.handleImage(e)}></input>
                     <br></br>
                     <br></br>
-                    <button color="primary" className="submitHouse" type="submit" onClick={this.redirectToTargetNext}>Next Step</button>
                     <button color="primary" className="submitHouse" type="submit" onClick={this.redirectToTargetPrevious}>Previous Step</button>
+                    <button color="primary" className="submitHouse" type="submit" onClick={this.redirectToTargetNext}>Next Step</button>
                 </form>
             
                 
             </div>
         )
     }
+}
+export default StepTwo
