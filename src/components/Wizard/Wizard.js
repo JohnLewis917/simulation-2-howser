@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import {Route} from 'react-router-dom'
-import stepOne from '../stepOne/stepOne'
-import stepTwo from '../stepTwo/stepTwo'
-import stepThree from '../stepThree/stepThree'
+import stepOne from '../stepOne'
+import stepTwo from '../stepTwo'
+import stepThree from '../stepThree'
 
 class Wizard extends Component{
 
@@ -21,7 +21,7 @@ class Wizard extends Component{
         
         return(
             <div>
-                <h1>Add New Listing</h1>
+                <h1>Dashboard</h1>
                 <button color="primary"
                         className="addProp"
                         onClick={this.redirectToTarget}>Cancel</button>
