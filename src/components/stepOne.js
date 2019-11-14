@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import {connect} from 'react-redux'
 
 
-class Wizard extends Component{
+class StepOne extends Component{
     constructor(){
         super()
         this.state = {
@@ -19,6 +20,7 @@ class Wizard extends Component{
         this.handleZip = this.handleZip.bind(this)
     }
     handleName(event){
+        const n = this.props.name
         
         this.setState({name: event.target.value})
     }
@@ -68,3 +70,12 @@ class Wizard extends Component{
             </div>
         )
     }
+}
+const mapStateToProps = (state) =>{
+    return {name: state.name,
+            address: state.address,
+            city: state.city,
+            state: state.state,
+            zip_code: state.zip_code}
+}
+export default connect(mapStateToProps)(StepOne)
