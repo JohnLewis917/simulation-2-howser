@@ -7,18 +7,7 @@ import {stepTwo} from '../dux/reducer'
 class StepTwo extends Component{
     constructor(){
         super()
-        // this.state = {
-        //     name: '',
-        //     address: '',
-        //     city: '',
-        //     state: '',
-        //     zip: 0
-        // }
-    //     this.handleImage = this.handleImage.bind(this)
         
-    // }
-    // handleImage(event){
-    //     this.setState({name: event.target.value})
     }
     redirectToTargetNext = () => {
         this.props.history.push(`/Wizard/stepThree`)
@@ -32,7 +21,7 @@ class StepTwo extends Component{
             <div>
                 
                 <form>
-                    {/* <img src="" alt="" type="image"/> */}
+                    
                     <input className="input-1" name="image" type="text" size="35"  onChange={(e) => this.props.stepTwo(e)}></input>
                     <br></br>
                     <br></br>
