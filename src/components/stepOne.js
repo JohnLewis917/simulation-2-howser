@@ -8,28 +8,8 @@ class StepOne extends Component{
     constructor(){
         super()
         
-        // this.handleName = this.handleName.bind(this)
-        // this.handleAddress = this.handleAddress.bind(this)
-        // this.handleCity = this.handleCity.bind(this)
-        // this.handleState = this.handleState.bind(this)
-        // this.handleZip = this.handleZip.bind(this)
     }
-    // handleName(event){
-    //     this.setState({name: event.target.value})
-    // }
-    // handleAddress(event){
-    //     this.setState({address: event.target.value})
-    // }
-    // handleCity(event){
-        
-    //     this.setState({city: event.target.value})
-    // }
-    // handleState(event){
-    //     this.setState({state: event.target.value})
-    // }
-    // handleZip(event){
-    //     this.setState({zip: event.target.value})
-    // }
+    
     redirectToTarget = () => {
         this.props.history.push(`/Wizard/stepTwo`)
     }
