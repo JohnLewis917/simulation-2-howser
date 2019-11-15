@@ -11,13 +11,17 @@ module.exports = {
     },
     addHouse(req, res) {
         const db = req.app.get('db')
-        const {name, address, city, state, zip_code} = req.body
+        const {name, address, city, state, zip, image, mortgage, rent} = req.body
+        console.log(req.body)
         db.add_house({
             name: name,
             address: address,
             city: city,
             state: state,
-            zip_code: zip_code
+            zip_code: zip,
+            image: image,
+            mortgage: mortgage,
+            rent: rent
         })
         .then(result => {
             res.status(200).send(result)
