@@ -7,22 +7,7 @@ import {stepThree} from '../dux/reducer'
 class StepThree extends Component{
     constructor(){
         super()
-        // this.state = {
-        //     name: '',
-        //     address: '',
-        //     city: '',
-        //     state: '',
-        //     zip: 0
-        // }
-    //     this.handleMortgage = this.handleMortgage.bind(this)
-    //     this.handleRent = this.handleRent.bind(this)
         
-    // }
-    // handleMortgage(event){
-    //     this.setState({name: event.target.value})
-    // }
-    // handleRent(event){
-    //     this.setState({address: event.target.value})
     }
     redirectToTargetPrevious = () => {
         this.props.history.push(`/Wizard/stepTwo`)
