@@ -19,6 +19,7 @@ class Dashboard extends Component{
     getHouses(){
         axios.get('/api/Dashboard')
         .then(res => {
+            console.log(res.data)
             this.setState({
                 houses: res.data
             })
@@ -47,7 +48,7 @@ class Dashboard extends Component{
             
 
                 {this.state.houses.map(el => 
-                (<House id={el.id} housesObj={el} deleteAHouse={this.deleteAHouse} />))}
+                (<House key={el.id} housesObj={el} deleteAHouse={this.deleteAHouse} />))}
 
                 
             
