@@ -29,10 +29,11 @@ class House extends Component{
                          <h6>
                              {this.props.housesObj.zip_code}
                          </h6>
+                         <img src= {this.props.housesObj.image}/>
                     </div>
                     
                 </div>
-                <button className="delete" type="submit" onClick={() => this.props.deleteAHouse(this.props.id)}>Delete</button> 
+                <button className="delete" type="submit" onClick={() => this.props.deleteAHouse(this.props.housesObj.id)}>Delete</button> 
             
                 
                  
